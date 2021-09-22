@@ -13,9 +13,10 @@
 <script src="./js/code.js" defer></script>
 
 <link href="style.css" rel="stylesheet">
-<style type="text/css" media="screen">
-    
-</style>
+<style type="text/css" media="screen"></style>
+
+<script src="https://togetherjs.com/togetherjs-min.js"></script>
+
 </head>
 <body>
 <script src="/socket.io/socket.io.js"></script>
@@ -29,7 +30,7 @@
     </select>
 
     <button id="run-btn" class="btn btn-danger">Run</button>
-    <button id ="increment">+1</button>
+    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 </div>
 
 
@@ -40,6 +41,5 @@
 
 <iframe id="frame"></iframe>
 
-</script>
 </body>
 </html>

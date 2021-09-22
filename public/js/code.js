@@ -1,6 +1,6 @@
 let themeValue='monokai';
 
-const socket = io()
+// const socket = io()
 
 let htmlEditor = ace.edit("editor1");
 
@@ -10,6 +10,9 @@ function setupEditor(){
     htmlEditor.setOptions({
         autoScrollEditorIntoView: true,
         copyWithEmptySelection: true,
+        enableSnippets: true,
+        enableBasicAutoCompletion: true,
+        enableLiveAutoCompletion: true
     });
     
     htmlEditor.session.setMode("ace/mode/html");
@@ -51,12 +54,16 @@ document.querySelector('#run-btn').addEventListener('click',()=>{
 })
 
 
-socket.on('message',(msg)=>{
-    console.log(msg)
-})
+// socket.on('message',(msg)=>{
+//     console.log(msg)
+//     htmlEditor.on("change", function(){
+//         const val = htmlEditor.getValue()
+//         const session= htmlEditor.getSession()
+        
+//         socket.emit("changed",val)
+//     }) 
+// })
 
-htmlEditor.on("change", function(){
-    const val = htmlEditor.getValue()
-    socket.emit("changed",val)
-}) 
+
+
 

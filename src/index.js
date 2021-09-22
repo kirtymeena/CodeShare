@@ -13,22 +13,23 @@ app.use(express.static(publicDirectoryPath));
 
 
 
-io.on('connection',(socket)=>{
-    console.log("new websocket connection")
+// io.on('connection',(socket)=>{
+//     console.log("new websocket connection")
 
-    socket.emit("message","welcome")
-    socket.broadcast.emit("message","A new user joined!")
+//     socket.emit("message","welcome")
+//     socket.broadcast.emit("message",`A new user joined`)
+//     socket.broadcast.emit('message',socket.id)
     
-    socket.on('changed',(val)=>{
-        io.emit("message",val)
+//     socket.on('changed',(val)=>{
+//         io.emit("message",val)
 
-    })
+//     })
 
-    socket.on('disconnect',()=>{
-        io.emit('message','A user has left');
-    })
+//     socket.on('disconnect',()=>{
+//         io.emit('message','A user has left');
+//     })
 
-})
+// })
 
 server.listen(port,()=>{
     console.log("server is up on port "+port);

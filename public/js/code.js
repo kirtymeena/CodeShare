@@ -87,3 +87,7 @@ document.getElementById("clear").addEventListener("click",(e)=>{
     setupEditor3()
 })
 
+document.getElementById("collabButton").addEventListener("click",()=>{
+    document.getElementById("collabButton").value="End collaboration";
+})
+

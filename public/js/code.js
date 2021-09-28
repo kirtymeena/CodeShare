@@ -17,15 +17,15 @@ function setupEditor(){
     
     htmlEditor.session.setMode("ace/mode/html");
     htmlEditor.setValue(`<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title></title>
+<html lang="en">
+    <head>
+        <title></title>
             
-        </head>
-        <body>
+    </head>
+    <body>
         
-        </body>
-    </html>`)
+    </body>
+</html>`)
 }
 setupEditor();
 
@@ -87,7 +87,4 @@ document.getElementById("clear").addEventListener("click",(e)=>{
     setupEditor3()
 })
 
-document.getElementById("collabButton").addEventListener("click",()=>{
-    document.getElementById("collabButton").value="End collaboration";
-})
 

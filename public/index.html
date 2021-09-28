@@ -7,37 +7,46 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./js/code.js" defer></script>
 
 <link href="style.css" rel="stylesheet">
-<style type="text/css" media="screen"></style>
 
-<script src="https://togetherjs.com/togetherjs-min.js"></script>
 
 </head>
 <body>
-<script src="/socket.io/socket.io.js"></script>
-<!-- <script src="js/socket.js" defer></script> -->
 
-<div id="option">
-    <select id="viewoption">
-        <option value="eclipse">Eclipse</option>
-        <option value="twilight">Twilight</option>
-        <option value="monokai">Monokai</option>
-    </select>
+    <script>
+       TogetherJSConfig_hubBase = "https://congruous-exciting-cement.glitch.me/";
+      </script>
+      <script src="https://togetherjs.com/togetherjs-min.js"></script>
+      
 
+<div class="container-fluid">
+<div class="row" id="row1">
+   <div class="col-sm">
     <button id="run-btn" class="btn btn-danger">Run</button>
-    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+    <button id="clear" class="btn btn-warning" style="margin-left:5px">clear all editors</button>
+    
+    <button class ="btn btn-info"onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+</div>
+    </div>   
 </div>
 
-
-<div id="editor1"></div>
-
-
- 
+<div class="container-fluid">
+    
+<div class="row" id="editorRow">
+    
+    <div class="col-sm-4 " id="col1"></div>
+    <div class="col-sm-4" id="col3"></div>
+    <div class="col-sm-4" id="col2"></div>
+    
+    
+</div>
+</div>
 
 <iframe id="frame"></iframe>
 

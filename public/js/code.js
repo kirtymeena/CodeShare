@@ -1,9 +1,9 @@
-let themeValue='monokai';
+let themeValue='twilight';
+let htmlEditor = ace.edit("col1");
+let jsEditor = ace.edit("col2");
+let cssEditor = ace.edit("col3")
 
-// const socket = io()
-
-let htmlEditor = ace.edit("editor1");
-
+//html editor
 function setupEditor(){
     
     htmlEditor.setTheme(`ace/theme/${themeValue}`);
@@ -16,54 +16,80 @@ function setupEditor(){
     });
     
     htmlEditor.session.setMode("ace/mode/html");
-    htmlEditor.setValue(`<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-    <h1 id="demo">Heading</h1>
-    <script>
-        document.querySelector("#demo").addEventListener("click",()=>{
-            alert("clicked at heading!")
-        })
-    </script>
-</body>
-</html>
-    `)
+    htmlEditor.setValue(`<!DOCTYPE html>`)
+}
+setupEditor();
+
+//javascript editor
+function setupEditor2(){
+    
+    jsEditor.setTheme(`ace/theme/${themeValue}`);
+    jsEditor.setOptions({
+        autoScrollEditorIntoView: true,
+        copyWithEmptySelection: true,
+        enableSnippets: true,
+        enableBasicAutoCompletion: true,
+        enableLiveAutoCompletion: true
+    });
+    
+    jsEditor.session.setMode("ace/mode/javascript");
+    jsEditor.setValue(`//javascript`)
 }
 
 
+setupEditor2();
 
-
-const theme = document.querySelector("#viewoption")
-theme.addEventListener('change',(e)=>{
-    console.log(e.target.value)
-    themeValue = e.target.value
+//css editor
+function setupEditor3(){
     
-    setupEditor()
-})
+    cssEditor.setTheme(`ace/theme/${themeValue}`);
+    cssEditor.setOptions({
+        autoScrollEditorIntoView: true,
+        copyWithEmptySelection: true,
+        enableSnippets: true,
+        enableBasicAutoCompletion: true,
+        enableLiveAutoCompletion: true
+    });
+    
+    cssEditor.session.setMode("ace/mode/css");
+    cssEditor.setValue(`/* css */`)
+}
 
-setupEditor();
 
-document.querySelector('#run-btn').addEventListener('click',()=>{
-    let html = htmlEditor.getValue();
-    let output = document.querySelector("#frame").contentWindow.document;
-    output.open();
-    output.write(html);
-    output.close();
-})
+setupEditor3();
 
 
-// socket.on('message',(msg)=>{
-//     console.log(msg)
-//     htmlEditor.on("change", function(){
-//         const val = htmlEditor.getValue()
-//         const session= htmlEditor.getSession()
-        
-//         socket.emit("changed",val)
-//     }) 
+
+
+
+
+// const theme = document.querySelector("#viewoption")
+// theme.addEventListener('change',(e)=>{
+//     console.log(e.target.value)
+//     themeValue = e.target.value
+    
+//     setupEditor()
 // })
 
 
 
+document.querySelector('#run-btn').addEventListener('click',()=>{
+    let html = htmlEditor.getValue();
+    let js = jsEditor.getValue();
+    let css = cssEditor.getValue();
+
+    let jsCode = "<script>"+js+"</script>"
+    let cssCode = "<style>"+css+"</style>"
+    let output = document.querySelector("#frame").contentWindow.document;
+
+    output.open();
+    output.write(html+jsCode+cssCode);
+    output.close();
+})
+
+document.getElementById("clear").addEventListener("click",(e)=>{
+    setupEditor()
+    setupEditor2()
+    setupEditor3()
+})
 

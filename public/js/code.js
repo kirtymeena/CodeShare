@@ -16,7 +16,16 @@ function setupEditor(){
     });
     
     htmlEditor.session.setMode("ace/mode/html");
-    htmlEditor.setValue(`<!DOCTYPE html>`)
+    htmlEditor.setValue(`<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title></title>
+            
+        </head>
+        <body>
+        
+        </body>
+    </html>`)
 }
 setupEditor();
 
@@ -57,21 +66,6 @@ function setupEditor3(){
 
 
 setupEditor3();
-
-
-
-
-
-
-// const theme = document.querySelector("#viewoption")
-// theme.addEventListener('change',(e)=>{
-//     console.log(e.target.value)
-//     themeValue = e.target.value
-    
-//     setupEditor()
-// })
-
-
 
 document.querySelector('#run-btn').addEventListener('click',()=>{
     let html = htmlEditor.getValue();

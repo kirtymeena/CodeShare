@@ -16,16 +16,7 @@ function setupEditor(){
     });
     
     htmlEditor.session.setMode("ace/mode/html");
-    htmlEditor.setValue(`<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title></title>
-            
-    </head>
-    <body>
-        
-    </body>
-</html>`)
+    htmlEditor.setValue(`<!DOCTYPE html>`)
 }
 setupEditor();
 
@@ -62,9 +53,9 @@ function setupEditor3(){
     
     cssEditor.session.setMode("ace/mode/css");
     cssEditor.setValue(`/* css */
-    body{
-        color:white
-    }
+body{
+    color:white
+}
     `)
 }
 

@@ -61,7 +61,11 @@ function setupEditor3(){
     });
     
     cssEditor.session.setMode("ace/mode/css");
-    cssEditor.setValue(`/* css */`)
+    cssEditor.setValue(`/* css */
+    body{
+        color:white
+    }
+    `)
 }
 
 
